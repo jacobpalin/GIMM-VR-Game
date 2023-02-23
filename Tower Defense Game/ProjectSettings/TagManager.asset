@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Whiteboard
+  - Fingertip
+  - CubeCheck
+  - SymbolPrefab
+  - Table
+  - TableSocket
+  - BasicSpellAoE
+  - Enemy
+  - TestDefendObject
+  - Wand
+  - Arrow2
+  - Arrow4
+  - Spell1
+  - Spell2
+  - Spell3
+  - Spell4
+  - SpellObjects
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Terrains
+  - Water
+  - UI
+  - SpellBeltItems
+  - Destroyable
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

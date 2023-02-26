@@ -803,7 +803,7 @@ GameObject:
   m_Component:
   - component: {fileID: 125386864}
   m_Layer: 0
-  m_Name: '>>SPELL Stuff'
+  m_Name: '>>SPELL Stuff<<'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3890,7 +3890,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1174480337}
   m_Layer: 0
-  m_Name: '>>TABLE Stuff'
+  m_Name: '>>TABLE Stuff<<'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4105,7 +4105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1217646107}
   m_Layer: 0
-  m_Name: '>>ENEMY Stuff'
+  m_Name: '>>ENEMY Stuff<<'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5019,7 +5019,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1591052583}
   m_Layer: 0
-  m_Name: '>>XR Stuff'
+  m_Name: '>>XR Stuff<<'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5607,7 +5607,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1783347460}
   m_Layer: 0
-  m_Name: '>>UNSORTED Stuff'
+  m_Name: '>>UNSORTED Stuff<<'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

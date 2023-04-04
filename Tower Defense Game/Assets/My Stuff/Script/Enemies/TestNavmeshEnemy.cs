@@ -49,7 +49,7 @@ public class TestNavmeshEnemy : MonoBehaviour
         currentSpeed = moving.magnitude / Time.deltaTime;
         previousPosition = transform.position;
 
-        if (currentSpeed == 0 && attackAgain < Time.time)
+        if (currentSpeed <= 0.1f && attackAgain < Time.time)
         {
             Collider[] objectsToHit = Physics.OverlapSphere(this.transform.position, attackRange, destroyables);
             foreach (Collider destroyableObject in objectsToHit)

@@ -5,7 +5,7 @@ using UnityEngine;
 public class DefendObject : MonoBehaviour
 {
     public int health;
-    private int currentHealth;
+    [SerializeField] private int currentHealth;
     // Start is called before the first frame update
     void Awake()
     {

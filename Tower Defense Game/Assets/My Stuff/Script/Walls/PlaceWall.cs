@@ -23,7 +23,6 @@ public class PlaceWall : MonoBehaviour
             //Debug.Log("working 1");
             RaycastHit hitInfo;
             Ray ray = new Ray(transform.position, transform.forward);
-            //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //this line needs to be something for the hand and not the camera
 
             if (Physics.Raycast(ray, out hitInfo))
             {

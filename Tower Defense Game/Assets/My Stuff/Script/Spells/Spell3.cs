@@ -8,6 +8,8 @@ public class Spell3 : MonoBehaviour
     public GameObject areaOfEffect;
     public int lengthOfSpell;
 
+    public Camera terrainCamera;
+
     void Start()
     {
         canCast = false;
@@ -16,13 +18,24 @@ public class Spell3 : MonoBehaviour
     {
         if (collision.gameObject.tag == "Table" && canCast == true)
         {
-            canCast = false;
-            StartCoroutine(SpawnSpellAreaOfEffect());
+            canCast = false; 
+            RaycastHit hit1;
+            Ray ray1 = new Ray(transform.position, transform.forward);
+            if (Physics.Raycast(ray1, out hit1))
+            {
+                Vector2 localPoint = hit1.textureCoord;
+                Ray ray2 = terrainCamera.ViewportPointToRay(localPoint);
+                RaycastHit hit2;
+                if (Physics.Raycast(ray2, out hit2))
+                {
+                    StartCoroutine(SpawnSpellAreaOfEffect(hit2.point));
+                }
+            }
         }
     }
-    IEnumerator SpawnSpellAreaOfEffect()
+    IEnumerator SpawnSpellAreaOfEffect(Vector3 hit)
     {
-        Instantiate(areaOfEffect, this.transform.position, Quaternion.identity);
+        Instantiate(areaOfEffect, hit, Quaternion.identity);
         yield return new WaitForSeconds(lengthOfSpell);
         Destroy(GameObject.FindWithTag("BasicSpellAoE"));
     }

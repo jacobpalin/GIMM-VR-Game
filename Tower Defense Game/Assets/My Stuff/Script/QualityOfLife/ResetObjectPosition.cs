@@ -42,6 +42,7 @@ public class ResetObjectPosition : MonoBehaviour
         if (shouldReturnHome)
         {
             transform.position = socketToReturnTo.transform.position;
+            Debug.Log("should return");
         }
     }
 

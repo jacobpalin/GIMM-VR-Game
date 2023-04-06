@@ -7,6 +7,7 @@ public class CheckObjectInHand : XRDirectInteractor
 {
     /*public XRDirectInteractor rHand;
     public XRDirectInteractor lHand;*/
+    private GameObject activeSpell;
 
     public void CanCast(string symbol)
     {
@@ -25,7 +26,7 @@ public class CheckObjectInHand : XRDirectInteractor
         {
             childObject.GetComponent<Spell3>().canCast = true;
         }
-        else if (childObject.CompareTag("Spell4") && symbol == "X")
+        else if (childObject.CompareTag("Spell4") && symbol == "V")
         {
             childObject.GetComponent<Spell4>().canCast = true;
         }
@@ -59,11 +60,5 @@ public class CheckObjectInHand : XRDirectInteractor
             }
         }
         return child;
-    }
-
-    public void PointSpellDown()
-    {
-        var currentObject = this.selectTarget.gameObject;
-        currentObject.transform.rotation = Quaternion.Euler(90, 0, 0);
     }
 }

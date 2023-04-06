@@ -29,7 +29,6 @@ public class CheckObjectInHand : XRDirectInteractor
         {
             childObject.GetComponent<Spell4>().canCast = true;
         }
-
     }
 
     GameObject FindChildWithTag(GameObject parent)
@@ -59,7 +58,12 @@ public class CheckObjectInHand : XRDirectInteractor
                 break;
             }
         }
-
         return child;
+    }
+
+    public void PointSpellDown()
+    {
+        var currentObject = this.selectTarget.gameObject;
+        currentObject.transform.rotation = Quaternion.Euler(90, 0, 0);
     }
 }

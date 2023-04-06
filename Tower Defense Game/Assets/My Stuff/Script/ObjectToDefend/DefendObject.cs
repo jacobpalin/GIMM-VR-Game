@@ -5,11 +5,13 @@ using UnityEngine;
 public class DefendObject : MonoBehaviour
 {
     public int health;
-    [SerializeField] private int currentHealth;
-    // Start is called before the first frame update
+    public int currentHealth;
+    private GameObject levelManager;
+
     void Awake()
     {
         currentHealth = health;
+        levelManager = GameObject.FindGameObjectWithTag("LevelManager");
     }
 
     // Update is called once per frame
@@ -23,7 +25,8 @@ public class DefendObject : MonoBehaviour
 
     private void Dead()
     {
-        Destroy(gameObject);
+        levelManager.GetComponent<LevelManager>().SpawnGameOver();
+        Destroy(gameObject, .1f);
         //Debug.Log("defend object dead");
     }
 

@@ -21,6 +21,10 @@ TagManager:
   - Spell3
   - Spell4
   - SpellObjects
+  - Start
+  - LevelManager
+  - TutorialLevel
+  - GameOver
   layers:
   - Default
   - TransparentFX

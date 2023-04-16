@@ -25,6 +25,8 @@ TagManager:
   - LevelManager
   - TutorialLevel
   - GameOver
+  - AudioManager
+  - Spawner
   layers:
   - Default
   - TransparentFX

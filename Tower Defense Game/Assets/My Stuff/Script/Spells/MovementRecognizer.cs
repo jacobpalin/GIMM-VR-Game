@@ -20,7 +20,7 @@ public class MovementRecognizer : MonoBehaviour
     public bool creationMode;
     public string newgestureName;
 
-    public float recognitionThreshold = 0.8f;
+    public float recognitionThreshold = 0.3f;
 
     [System.Serializable]
     public class UnityStringEvent : UnityEvent<string> { }
@@ -75,7 +75,6 @@ public class MovementRecognizer : MonoBehaviour
     {
         Debug.Log("End Movement");
         isMoving = false;
-        pickedUpObject = false;
 
         Point[] pointArray = new Point[positionsList.Count];
 

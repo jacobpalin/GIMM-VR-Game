@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.Audio;
 
 public class CheckObjectInHand : XRDirectInteractor
 {
-    /*public XRDirectInteractor rHand;
-    public XRDirectInteractor lHand;*/
-    private GameObject activeSpell;
+    [SerializeField] private GameObject spellManager;
 
     public void CanCast(string symbol)
     {
@@ -17,18 +16,22 @@ public class CheckObjectInHand : XRDirectInteractor
         if (childObject.CompareTag("Spell1") && symbol == "Circle")
         {
             childObject.GetComponent<Spell1>().canCast = true;
+            childObject.GetComponent<AudioSource>().Play();
         }
         else if (childObject.CompareTag("Spell2") && symbol == "Square")
         {
             childObject.GetComponent<Spell2>().canCast = true;
+            childObject.GetComponent<AudioSource>().Play();
         }
         else if (childObject.CompareTag("Spell3") && symbol == "Triangle")
         {
             childObject.GetComponent<Spell3>().canCast = true;
+            childObject.GetComponent<AudioSource>().Play();
         }
         else if (childObject.CompareTag("Spell4") && symbol == "V")
         {
             childObject.GetComponent<Spell4>().canCast = true;
+            childObject.GetComponent<AudioSource>().Play();
         }
     }
 

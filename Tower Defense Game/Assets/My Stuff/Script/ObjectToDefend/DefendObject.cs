@@ -26,7 +26,8 @@ public class DefendObject : MonoBehaviour
     private void Dead()
     {
         levelManager.GetComponent<LevelManager>().SpawnGameOver();
-        Destroy(gameObject, .1f);
+        //Destroy(gameObject, .1f);
+        this.gameObject.SetActive(false);
         //Debug.Log("defend object dead");
     }
 
@@ -34,5 +35,10 @@ public class DefendObject : MonoBehaviour
     {
         currentHealth -= dmg;
         //Debug.Log("defend object health = " + currentHealth);
+    }
+
+    public void ResetHealth()
+    {
+        currentHealth = health;
     }
 }

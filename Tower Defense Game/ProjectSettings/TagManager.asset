@@ -27,6 +27,10 @@ TagManager:
   - GameOver
   - AudioManager
   - Spawner
+  - Ball1
+  - Ball2
+  - Ball3
+  - Ball4
   layers:
   - Default
   - TransparentFX

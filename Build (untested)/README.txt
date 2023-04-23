@@ -1,0 +1,1 @@
+I haven't tested this build to see if it works but I assume you would need to use oculus link to get it work. You also need to put the files in the Persistent Files folder into this directory (C:\Users\<user>\AppData\LocalLow\<company name>) in order for the shape recognition to work. Look for something like 'Jacob Palin Games' for the company name.

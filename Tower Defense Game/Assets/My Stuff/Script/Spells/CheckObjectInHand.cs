@@ -15,22 +15,31 @@ public class CheckObjectInHand : XRDirectInteractor
         
         if (childObject.CompareTag("Spell1") && symbol == "Circle")
         {
+            //finds the canCast bool and sets it true
             childObject.GetComponent<Spell1>().canCast = true;
+            //plays the ding sound at a varying pitch to sound different every time
+            childObject.GetComponent<AudioSource>().pitch = (Random.Range(0.95f, 1.05f));
             childObject.GetComponent<AudioSource>().Play();
         }
         else if (childObject.CompareTag("Spell2") && symbol == "Square")
         {
             childObject.GetComponent<Spell2>().canCast = true;
+
+            childObject.GetComponent<AudioSource>().pitch = (Random.Range(0.95f, 1.05f));
             childObject.GetComponent<AudioSource>().Play();
         }
         else if (childObject.CompareTag("Spell3") && symbol == "Triangle")
         {
             childObject.GetComponent<Spell3>().canCast = true;
+
+            childObject.GetComponent<AudioSource>().pitch = (Random.Range(0.95f, 1.05f));
             childObject.GetComponent<AudioSource>().Play();
         }
         else if (childObject.CompareTag("Spell4") && symbol == "V")
         {
             childObject.GetComponent<Spell4>().canCast = true;
+
+            childObject.GetComponent<AudioSource>().pitch = (Random.Range(0.95f, 1.05f));
             childObject.GetComponent<AudioSource>().Play();
         }
     }

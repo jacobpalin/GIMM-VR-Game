@@ -11,40 +11,40 @@ public class CheckObjectInHand : XRDirectInteractor
     public void CanCast(string symbol)
     {
         var currentObject = this.selectTarget.gameObject; //sets the currently selected object to the variable
-        var childObject = FindChildWithTag(currentObject); //uses currentObject to call a method to find the child object of the selected object
+        //var childObject = FindChildWithTag(currentObject); //uses currentObject to call a method to find the child object of the selected object
         
-        if (childObject.CompareTag("Spell1") && symbol == "Circle")
+        if (currentObject.CompareTag("Spell1") && symbol == "Circle")
         {
             //finds the canCast bool and sets it true
-            childObject.GetComponent<Spell1>().canCast = true;
+            currentObject.GetComponent<Spell1>().canCast = true;
             //plays the ding sound at a varying pitch to sound different every time
-            childObject.GetComponent<AudioSource>().pitch = (Random.Range(0.95f, 1.05f));
-            childObject.GetComponent<AudioSource>().Play();
+            currentObject.GetComponent<AudioSource>().pitch = (Random.Range(0.95f, 1.05f));
+            currentObject.GetComponent<AudioSource>().Play();
         }
-        else if (childObject.CompareTag("Spell2") && symbol == "Square")
+        else if (currentObject.CompareTag("Spell2") && symbol == "Square")
         {
-            childObject.GetComponent<Spell2>().canCast = true;
+            currentObject.GetComponent<Spell2>().canCast = true;
 
-            childObject.GetComponent<AudioSource>().pitch = (Random.Range(0.95f, 1.05f));
-            childObject.GetComponent<AudioSource>().Play();
+            currentObject.GetComponent<AudioSource>().pitch = (Random.Range(0.95f, 1.05f));
+            currentObject.GetComponent<AudioSource>().Play();
         }
-        else if (childObject.CompareTag("Spell3") && symbol == "Triangle")
+        else if (currentObject.CompareTag("Spell3") && symbol == "Triangle")
         {
-            childObject.GetComponent<Spell3>().canCast = true;
+            currentObject.GetComponent<Spell3>().canCast = true;
 
-            childObject.GetComponent<AudioSource>().pitch = (Random.Range(0.95f, 1.05f));
-            childObject.GetComponent<AudioSource>().Play();
+            currentObject.GetComponent<AudioSource>().pitch = (Random.Range(0.95f, 1.05f));
+            currentObject.GetComponent<AudioSource>().Play();
         }
-        else if (childObject.CompareTag("Spell4") && symbol == "V")
+        else if (currentObject.CompareTag("Spell4") && symbol == "V")
         {
-            childObject.GetComponent<Spell4>().canCast = true;
+            currentObject.GetComponent<Spell4>().canCast = true;
 
-            childObject.GetComponent<AudioSource>().pitch = (Random.Range(0.95f, 1.05f));
-            childObject.GetComponent<AudioSource>().Play();
+            currentObject.GetComponent<AudioSource>().pitch = (Random.Range(0.95f, 1.05f));
+            currentObject.GetComponent<AudioSource>().Play();
         }
     }
 
-    GameObject FindChildWithTag(GameObject parent)
+    /*GameObject FindChildWithTag(GameObject parent)
     {
         GameObject child = null;
 
@@ -72,5 +72,5 @@ public class CheckObjectInHand : XRDirectInteractor
             }
         }
         return child;
-    }
+    }*/
 }

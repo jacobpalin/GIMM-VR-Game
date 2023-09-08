@@ -14,6 +14,12 @@ public class Spell3 : MonoBehaviour
     {
         canCast = false;
     }
+
+    private void Update()
+    {
+        transform.rotation = Quaternion.Euler(90, 0, 0);
+    }
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Table" && canCast == true)
@@ -33,6 +39,7 @@ public class Spell3 : MonoBehaviour
             }
         }
     }
+
     IEnumerator SpawnSpellAreaOfEffect(Vector3 hit)
     {
         Instantiate(areaOfEffect, hit, Quaternion.identity);

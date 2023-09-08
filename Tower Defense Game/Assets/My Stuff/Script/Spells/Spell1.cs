@@ -14,15 +14,20 @@ public class Spell1 : MonoBehaviour
     {
         canCast = false;
     }
+
+    private void Update()
+    {
+        transform.rotation = Quaternion.Euler(90, 0, 0);
+    }
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Table" && canCast == true)
         {
             canCast = false;
-
             RaycastHit hit1;
             Ray ray1 = new Ray(transform.position, transform.forward);
-            if(Physics.Raycast(ray1, out hit1))
+            if (Physics.Raycast(ray1, out hit1))
             {
                 Vector2 localPoint = hit1.textureCoord;
                 Ray ray2 = terrainCamera.ViewportPointToRay(localPoint);
@@ -34,6 +39,7 @@ public class Spell1 : MonoBehaviour
             }
         }
     }
+
     IEnumerator SpawnSpellAreaOfEffect(Vector3 hit)
     {
         Instantiate(areaOfEffect, hit, Quaternion.identity);

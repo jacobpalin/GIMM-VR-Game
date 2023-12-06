@@ -6,23 +6,25 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] private GameObject startButton;
     [SerializeField] private Transform startButtonSlot;
+    [SerializeField] private GameObject tutorialButton;
+    [SerializeField] private Transform tutorialButtonSlot;
 
     [SerializeField] private GameObject gameOverText;
     [SerializeField] private Transform gameOverSlot;
 
     //[SerializeField] private GameObject tutorialLevel;
 
-    [SerializeField] private GameObject defendObject;
+    [SerializeField] public GameObject defendObject;
 
-    [SerializeField] private GameObject cameraPlane;
+    [SerializeField] public GameObject cameraPlane;
 
     [SerializeField] private GameObject audioManager;
 
-    [SerializeField] private GameObject[] spawners;
+    [SerializeField] public GameObject[] spawners;
 
     void Awake()
     {
-        SpawnStartButton();
+        SpawnButtons();
         spawners = GameObject.FindGameObjectsWithTag("Spawner");
         foreach (GameObject spawner in spawners)
         {
@@ -45,20 +47,22 @@ public class LevelManager : MonoBehaviour
         defendObject.GetComponent<DefendObject>().ResetHealth();
         cameraPlane.GetComponent<CameraPlaneScript>().ScaleUp();
         Destroy(GameObject.FindGameObjectWithTag("Start"));
-        audioManager.GetComponent<AdaptiveAudioManager>().gameStarted = true;
-        audioManager.GetComponent<AdaptiveAudioManager>().ChangeMusic();
+        Destroy(GameObject.FindGameObjectWithTag("TutorialButton"));
+        //audioManager.GetComponent<AdaptiveAudioManager>().gameStarted = true;
+        //audioManager.GetComponent<AdaptiveAudioManager>().ChangeMusic();
     }
 
-    private void SpawnStartButton()
+    private void SpawnButtons()
     {
         Instantiate(startButton, startButtonSlot);
+        Instantiate(tutorialButton, tutorialButtonSlot);
     }
 
     public void SpawnGameOver()
     {
         Instantiate(gameOverText, gameOverSlot);
-        audioManager.GetComponent<AdaptiveAudioManager>().gameStarted = false;
-        audioManager.GetComponent<AdaptiveAudioManager>().ChangeMusic();
+        //audioManager.GetComponent<AdaptiveAudioManager>().gameStarted = false;
+        //audioManager.GetComponent<AdaptiveAudioManager>().ChangeMusic();
         cameraPlane.GetComponent<CameraPlaneScript>().ScaleDown();
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach(GameObject enemy in enemies)
@@ -72,7 +76,7 @@ public class LevelManager : MonoBehaviour
 
         //Destroy(GameObject.FindGameObjectWithTag("TutorialLevel"));
 
-        SpawnStartButton();
+        SpawnButtons();
     }
 
     /*private void StartTutorialLevel()

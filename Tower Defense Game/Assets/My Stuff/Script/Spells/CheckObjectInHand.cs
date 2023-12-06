@@ -6,13 +6,18 @@ using UnityEngine.Audio;
 
 public class CheckObjectInHand : XRDirectInteractor
 {
-    [SerializeField] private GameObject spellManager;
+    [SerializeField] private GameObject spellVisibility;
+    [SerializeField] private GameObject tutorialManager;
 
     public void CanCast(string symbol)
     {
+        if (tutorialManager.GetComponent<TutorialScript>().spellsSpawned == true)
+        {
+            tutorialManager.GetComponent<TutorialScript>().tracedSymbol = true;
+            tutorialManager.GetComponent<TutorialScript>().TutorialMethod();
+        }
         var currentObject = this.selectTarget.gameObject; //sets the currently selected object to the variable
         //var childObject = FindChildWithTag(currentObject); //uses currentObject to call a method to find the child object of the selected object
-        
         if (currentObject.CompareTag("Spell1") && symbol == "Circle")
         {
             //finds the canCast bool and sets it true
@@ -41,6 +46,36 @@ public class CheckObjectInHand : XRDirectInteractor
 
             currentObject.GetComponent<AudioSource>().pitch = (Random.Range(0.95f, 1.05f));
             currentObject.GetComponent<AudioSource>().Play();
+        }
+    }
+
+    public void HideSpells()
+    {
+        var currentObject = this.selectTarget.gameObject; //sets the currently selected object to the variable
+
+        if (currentObject.CompareTag("Spell1"))
+        {
+            spellVisibility.GetComponent<SpellsVisibility>().HideSpell2();
+            spellVisibility.GetComponent<SpellsVisibility>().HideSpell3();
+            spellVisibility.GetComponent<SpellsVisibility>().HideSpell4();
+        }
+        else if (currentObject.CompareTag("Spell2"))
+        {
+            spellVisibility.GetComponent<SpellsVisibility>().HideSpell1();
+            spellVisibility.GetComponent<SpellsVisibility>().HideSpell3();
+            spellVisibility.GetComponent<SpellsVisibility>().HideSpell4();
+        }
+        else if (currentObject.CompareTag("Spell3"))
+        {
+            spellVisibility.GetComponent<SpellsVisibility>().HideSpell1();
+            spellVisibility.GetComponent<SpellsVisibility>().HideSpell2();
+            spellVisibility.GetComponent<SpellsVisibility>().HideSpell4();
+        }
+        else if (currentObject.CompareTag("Spell4"))
+        {
+            spellVisibility.GetComponent<SpellsVisibility>().HideSpell1();
+            spellVisibility.GetComponent<SpellsVisibility>().HideSpell2();
+            spellVisibility.GetComponent<SpellsVisibility>().HideSpell3();
         }
     }
 

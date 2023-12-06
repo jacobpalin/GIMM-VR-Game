@@ -32,6 +32,8 @@ public class MovementRecognizer : MonoBehaviour
 
     public bool pickedUpObject = false;
 
+    [SerializeField] private GameObject tutorialManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -119,6 +121,13 @@ public class MovementRecognizer : MonoBehaviour
     public void ObjectPickedUp()
     {
         pickedUpObject = true;
+        movementSource.GetComponent<CheckObjectInHand>().HideSpells();
+        if(tutorialManager.GetComponent<TutorialScript>().pickUpObject == false &&
+        tutorialManager.GetComponent<TutorialScript>().spellsSpawned == true)
+        {
+            tutorialManager.GetComponent<TutorialScript>().pickUpObject = true;
+            tutorialManager.GetComponent<TutorialScript>().TutorialMethod();
+        }
     }
 
     public void ObjectDropped()

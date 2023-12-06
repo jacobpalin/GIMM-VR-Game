@@ -31,6 +31,10 @@ TagManager:
   - Ball2
   - Ball3
   - Ball4
+  - TutorialButton
+  - TutorialManager
+  - Hand
+  - Room
   layers:
   - Default
   - TransparentFX

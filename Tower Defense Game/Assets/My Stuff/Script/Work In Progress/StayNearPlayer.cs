@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class StayNearPlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    [SerializeField] private GameObject player;
     void Update()
     {
-        
+        this.transform.position = new Vector3(this.transform.position.x, player.transform.position.y, this.transform.position.z);
     }
 }

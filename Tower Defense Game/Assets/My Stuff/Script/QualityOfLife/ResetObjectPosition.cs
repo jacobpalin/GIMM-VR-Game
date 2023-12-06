@@ -41,7 +41,8 @@ public class ResetObjectPosition : MonoBehaviour
     {
         if (shouldReturnHome)
         {
-            transform.position = socketToReturnTo.transform.position;
+            transform.position = socketToReturnTo.transform.position; 
+            transform.GetChild(0).gameObject.SetActive(false);
             Debug.Log("should return");
         }
     }

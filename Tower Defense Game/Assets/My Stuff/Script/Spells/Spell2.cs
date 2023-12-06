@@ -10,6 +10,8 @@ public class Spell2 : MonoBehaviour
 
     public Camera terrainCamera;
 
+    [SerializeField] private GameObject spellVisibility;
+    [SerializeField] private GameObject tutorialManager;
     void Start()
     {
         canCast = false;
@@ -42,6 +44,8 @@ public class Spell2 : MonoBehaviour
 
     IEnumerator SpawnSpellAreaOfEffect(Vector3 hit)
     {
+        tutorialManager.GetComponent<TutorialScript>().castSpell = true;
+        tutorialManager.GetComponent<TutorialScript>().TutorialMethod();
         Instantiate(areaOfEffect, hit, Quaternion.identity);
         yield return new WaitForSeconds(lengthOfSpell);
         Destroy(GameObject.FindWithTag("BasicSpellAoE"));

@@ -11,7 +11,7 @@ using UnityEngine.Events;
 public class MovementRecognizer : MonoBehaviour
 {
     public XRNode inputSource;
-    public InputHelpers.Button inputButton;
+    public UnityEngine.XR.Interaction.Toolkit.InputHelpers.Button inputButton;
     public float inputThreshold = 0.1f;
     public Transform movementSource;
 
@@ -47,7 +47,7 @@ public class MovementRecognizer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        InputHelpers.IsPressed(InputDevices.GetDeviceAtXRNode(inputSource), inputButton, out bool isPressed, inputThreshold);
+        UnityEngine.XR.Interaction.Toolkit.InputHelpers.IsPressed(InputDevices.GetDeviceAtXRNode(inputSource), inputButton, out bool isPressed, inputThreshold);
 
         if(!isMoving && isPressed && pickedUpObject)
         {

@@ -10,7 +10,7 @@ public class SpellsVisibility : MonoBehaviour
     [SerializeField] private GameObject tutorialManager;
 
     public XRNode inputSource;
-    public InputHelpers.Button inputButton;
+    public UnityEngine.XR.Interaction.Toolkit.InputHelpers.Button inputButton;
     public float inputThreshold = 0.1f;
 
     private void Start()
@@ -20,7 +20,7 @@ public class SpellsVisibility : MonoBehaviour
 
     private void Update()
     {
-        InputHelpers.IsPressed(InputDevices.GetDeviceAtXRNode(inputSource), inputButton, out bool isPressed, inputThreshold);
+        UnityEngine.XR.Interaction.Toolkit.InputHelpers.IsPressed(InputDevices.GetDeviceAtXRNode(inputSource), inputButton, out bool isPressed, inputThreshold);
 
         if (isPressed && movementRecognizer.GetComponent<MovementRecognizer>().pickedUpObject == false)
         {
